@@ -39,7 +39,7 @@ class UserFactory extends Factory
             'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             // 'phone' => fake()->creditCardNumber(),
-            'user_type_id' => $type,
+            'user_type_id' => fake()->localCoordinates(),
             'status'=>$status,
             'password' => $password ??= Hash::make('password'),
             'profile_picture'=>fake()->imageUrl($width=400, $height=400,$category="product") 
