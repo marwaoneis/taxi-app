@@ -1,0 +1,26 @@
+.bg-img{
+    background-size: cover;
+    background-position: center;
+    background-image: url('C:/Users/Alienware/Desktop/taxi-app/taxi-app-frontend/src/assets/images/login-bg.jpeg');
+    background-repeat: no-repeat;
+}
+.container{
+    justify-content: space-around;
+}
+
+
+.login-input{
+    width: 37.5rem;
+}
+.login-btn{
+    width: 37.5rem;
+    margin-top: 20px;
+}
+
+.register-redirect{
+    text-decoration: underline white;
+    font-size: smaller;
+}
+.register-redirect span{
+    cursor: pointer;
+}
