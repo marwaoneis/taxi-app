@@ -1,0 +1,39 @@
+.footer-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: white;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 15px;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.footer-wrapper {
+  gap: 390px;
+}
+
+.top {
+  align-self: flex-start;
+  margin-left: 188px;
+  margin-bottom: 35px;
+  gap: 15px;
+}
+
+.top > p {
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.top:hover,
+li:hover {
+  text-decoration: underline;
+  color: white;
+}
