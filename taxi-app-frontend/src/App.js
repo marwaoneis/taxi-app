@@ -10,6 +10,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/index.css";
 import "./styles/base.css";
 import "./styles/color.css";
+import Rides from "./components/Rides/Rides";
+import Profile from "./components/Profile/Profile";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/passengerRegister" element={<PassengerRegister />} />
           <Route path="/driverDashboard" element={<DriverDashboard />} />
           <Route path="/passengerDashboard" element={<PassengerDashboard />} />
+          <Route path="/passengerDashboard/rides" element={<Rides />} />
+          <Route path="/passengerDashboard/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </div>
