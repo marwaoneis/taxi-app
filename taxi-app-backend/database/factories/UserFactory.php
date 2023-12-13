@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Faker\Core\Number;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -14,21 +15,38 @@ class UserFactory extends Factory
     /**
      * The current password being used by the factory.
      */
-    protected static ?string $password;
+    protected static string $password="123";
 
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
      */
+
     public function definition(): array
     {
+        
+        $type=fake()->numberBetween(2,3);
+        if($type==2){
+            $status=null;
+        }else{
+            $status="Pending";
+        }
+       
         return [
-            'name' => fake()->name(),
+            // 'id' => fake()->numberBetween(10,20),
+            'first_name' => fake()->firstName(),
+            'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
+            // 'phone' => fake()->creditCardNumber(),
+            'user_type_id' => $type,
+            'status'=>$status,
+            'password' => $password ??= Hash::make('password'),
+            'profile_picture'=>fake()->imageUrl($width=400, $height=400,$category="product") 
+
+            // 'email_verified_at' => now(),
+            // 'password' => static::$password ??= Hash::make('password'),
+            // 'remember_token' => Str::random(10),
         ];
     }
 
