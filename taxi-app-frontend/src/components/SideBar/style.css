@@ -1,6 +1,6 @@
 .sidebar-container {
   width: 345px;
-  height: 1000px;
+  height: 100vh;
   justify-content: space-between;
 }
 

@@ -1,11 +1,11 @@
 import React from "react";
-import DashboardPage from "../../components/DashboardPage/DashboardPage";
 import "./style.css";
+import Dashboard from "../../components/Dashboard/Dashboard";
 
 const PassengerDashboard = () => {
   return (
     <div>
-      <DashboardPage />
+      <Dashboard />
     </div>
   );
 };

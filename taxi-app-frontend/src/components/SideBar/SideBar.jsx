@@ -84,7 +84,7 @@ const SideBar = () => {
           <div className="sidebar-btn">
             <Link to="/passengerDashboard" className="">
               <button
-                className={`rides-btn ${getButtonClasses("profile")}`}
+                className={`profile-btn ${getButtonClasses("profile")}`}
                 onMouseEnter={() => handleHover("profile")}
                 onMouseLeave={() => handleHover("profile")}
                 onClick={() => handleClick("profile")}
@@ -99,7 +99,7 @@ const SideBar = () => {
       <div className="sidebar-btn">
         <Link to="/login" className="">
           <button
-            className={`rides-btn ${getButtonClassLogout("logout")}`}
+            className={`logout-btn ${getButtonClassLogout("logout")}`}
             onMouseEnter={() => handleHover("logout")}
             onMouseLeave={() => handleHover("logout")}
             onClick={() => handleClick("logout")}

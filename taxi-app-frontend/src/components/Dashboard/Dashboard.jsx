@@ -1,7 +1,7 @@
 import React from "react";
 import SideBar from "../SideBar/SideBar";
 
-const DashboardPage = () => {
+const Dashboard = () => {
   return (
     <div className="primary-bg">
       <SideBar />
@@ -9,4 +9,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default Dashboard;
