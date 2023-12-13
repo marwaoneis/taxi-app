@@ -8,7 +8,7 @@ const MapComp = ({currentLocation,destination}) => {
 
   return (
     <div className="map-container full-width mt-20">
-      <Map className="full-width" center={anchor} zoom={13} height={320} >
+      <Map className="full-width" center={center} zoom={13} height={320} >
         <Marker
           anchor={center}
           payload={1}
