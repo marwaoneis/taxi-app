@@ -7,7 +7,7 @@ const MapComp = () => {
 
   return (
     <div className="map-container">
-      <Map center={center} zoom={13} height={400} width={600}>
+      <Map center={center} zoom={13} height={420} width={1183}>
         <Marker
           anchor={center}
           payload={1}

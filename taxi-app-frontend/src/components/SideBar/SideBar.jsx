@@ -70,7 +70,7 @@ const SideBar = () => {
             </Link>
           </div>
           <div className="sidebar-btn">
-            <Link to="/passengerDashboard" className="">
+            <Link to="/passengerDashboard/rides" className="">
               <button
                 className={`rides-btn ${getButtonClasses("rides")}`}
                 onMouseEnter={() => handleHover("rides")}
@@ -82,7 +82,7 @@ const SideBar = () => {
             </Link>
           </div>
           <div className="sidebar-btn">
-            <Link to="/passengerDashboard" className="">
+            <Link to="/passengerDashboard/profile" className="">
               <button
                 className={`profile-btn ${getButtonClasses("profile")}`}
                 onMouseEnter={() => handleHover("profile")}
