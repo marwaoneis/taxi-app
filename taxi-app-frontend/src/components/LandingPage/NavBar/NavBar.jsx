@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <div className="flex full-width primary-bg navBar">
+    <div className="body flex full-width primary-bg navBar">
       <div className="logo">
         <img src={logo} alt="taxi app logo" className="taxi-logo" />
       </div>

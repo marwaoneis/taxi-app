@@ -1,26 +1,31 @@
-.bg-img{
-    background-size: cover;
-    background-position: center;
-    background-image: url('C:/Users/Alienware/Desktop/taxi-app/taxi-app-frontend/src/assets/images/login-bg.jpeg');
-    background-repeat: no-repeat;
-}
-.container{
-    justify-content: space-around;
+.bg-img {
+  background-size: cover;
+  background-position: center;
+  background-image: url("/src/assets/images/login-bg.jpeg");
+  background-repeat: no-repeat;
 }
 
-
-.login-input{
-    width: 37.5rem;
-}
-.login-btn{
-    width: 37.5rem;
-    margin-top: 20px;
+.container {
+  justify-content: space-around;
 }
 
-.register-redirect{
-    text-decoration: underline white;
-    font-size: smaller;
+.login-input {
+  width: 37.5rem;
 }
-.register-redirect span{
-    cursor: pointer;
+
+.login-btn {
+  width: 37.5rem;
+  margin-top: 20px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #2d9596;
+}
+
+.register-redirect {
+  text-decoration: underline white;
+  font-size: smaller;
+}
+
+.register-redirect span {
+  cursor: pointer;
 }

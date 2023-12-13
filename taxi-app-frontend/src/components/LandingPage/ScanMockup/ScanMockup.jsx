@@ -4,7 +4,7 @@ import scan from "../../../assets/images/scan-code.png";
 
 const ScanMockup = () => {
   return (
-    <div className="flex center column full-height full-width scan">
+    <div className="body flex center column full-height full-width scan">
       <div>
         <div>
           <div className="scan-sec-title">
