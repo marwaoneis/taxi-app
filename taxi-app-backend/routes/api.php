@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RideController;
+use App\Models\Ride;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,3 +34,14 @@ Route::controller(AuthController::class)->group(
         Route::post('refresh', 'refresh');
     }
 );
+
+
+Route::get('/pending_rides', [RideController::class, 'pending_rides']);
+Route::post('/accept_ride', [RideController::class, 'accept_ride']);
+
+Route::post('/start_ride', [RideController::class, 'start_ride']);
+Route::post('/end_ride', [RideController::class, 'end_ride']);
+
+Route::post('/request_ride', [RideController::class, 'request_ride']);
+Route::get('/get_ride/{id?}', [RideController::class, 'get_ride']);
+

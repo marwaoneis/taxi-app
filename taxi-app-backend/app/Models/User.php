@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -21,9 +22,17 @@ class User extends Authenticatable implements JWTSubject
         'last_name',
         'user_type_id',
         'email',
+
         'password',
     ];
-
+    public function passenger()
+    {
+        return $this->belongsToMany(Ride::class, 'passenger_id');
+    }
+    public function driver()
+    {
+        return $this->belongsToMany(Ride::class, 'driver_id');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -43,7 +52,7 @@ class User extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
-     /**
+    /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
      * @return mixed
@@ -61,13 +70,12 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [
-           
-            'first_name'=>$this->first_name,
-            'last_name'=>$this->last_name,
-            'email'=>$this->email,
-            'user_type_id'=>$this->usertype_id,
-            'id'=>$this->id
+
+            'first_name' => $this->first_name,
+            'last_name' => $this->last_name,
+            'email' => $this->email,
+            'user_type_id' => $this->usertype_id,
+            'id' => $this->id
         ];
     }
-
 }

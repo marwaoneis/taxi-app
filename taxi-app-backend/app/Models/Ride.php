@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Ride extends Model
 {
     use HasFactory;
+    public function passenger()
+    {
+        return $this->hasMany(User::class, 'passenger_id');
+    }
+    public function driver()
+    {
+        return $this->hasMany(User::class, 'driver_id');
+    }
 }
