@@ -1,23 +1,25 @@
 import { React, useState } from "react";
 import logo from "../../assets/images/logo-white.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./style.css";
 
 const SideBar = () => {
-  const [activeMainTab, setActiveMainTab] = useState("Home");
+  const location = useLocation();
+  console.log(location)
+  const [activeMainTab, setActiveMainTab] = useState(location.pathname);
   const menuItems = [
     {
       title: "Home",
-      route: "Home",
+      route: "/driverDashboard",
     },
     {
       title: "Rides",
-      route: "Rides",
+      route: "/driverDashboard/Rides",
     },
 
     {
       title: "Profile",
-      route: "Profile",
+      route: "/driverDashboard/Profile",
     },
   ];
 
@@ -33,7 +35,8 @@ const SideBar = () => {
         <div className="flex side-elements column">
           {menuItems.map((menuItem, index) => {
             return (
-              <Link to={menuItem.route}
+              <Link
+                to={menuItem.route}
                 key={index}
                 onClick={() => {
                   setActiveMainTab(`${menuItem.title}`);
@@ -42,10 +45,8 @@ const SideBar = () => {
               >
                 <button
                   className={`rides-btn ${
-                    activeMainTab === menuItem.title ? "active" : ""
+                    activeMainTab === menuItem.route ? "active" : ""
                   }`}
-
-              
                 >
                   {menuItem.title}
                 </button>

@@ -21,7 +21,7 @@ const DriverDashboard = () => {
           <div className="title-text white-text mt-20">
             <h2>Ride Requests</h2>
           </div>
-          <div className="rides-tabel flex center full-width mt-20">
+          <div className=" flex center full-width mt-20">
             <table className="white-bg">
               <thead>
                 <tr>
