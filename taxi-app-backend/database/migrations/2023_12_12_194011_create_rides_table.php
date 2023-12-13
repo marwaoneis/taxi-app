@@ -21,7 +21,10 @@ return new class extends Migration
             $table->string('feedback_by_passenger')->nullable();
             $table->integer('rating_by_driver')->nullable();
             $table->string('feedback_by_driver')->nullable();
-            $table->string('status');
+            $table->string('status')->default('pending');
+            $table->integer('price')->default(10);
+
+
             $table->foreign('passenger_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('driver_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
