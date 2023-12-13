@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import logo from "../../../assets/images/logo.svg";
-import { useState , useEffect } from "react";
+import { useState } from "react";
 import { request } from "../../../core/request_helpers/apicall";
 
 
@@ -15,17 +15,19 @@ const PassengerRegister = () => {
    user_type_id: 2
   });
   
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
+  
+  const handleInputChange = (e) => {
+    const  value  = e.target.value;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [e.target.name]: value,
     }));
   };
 
 
  
-  const handleSubmit = async () => { 
+  const handleSubmit = async (e) => { 
+    e.preventDefault();
     try{
       const body = { ...formData };
     const response = await request({
@@ -64,7 +66,7 @@ const PassengerRegister = () => {
 
           <img src={logo} alt="logo" className="logo" />
         </div>
-        <form method="POST" className="register-form flex center wrapper ">
+        <form onSubmit={handleSubmit} className="register-form flex center wrapper ">
           <div className="input-group flex column ">
             <label className="primary-text">First Name*</label>
             <input type="text" placeholder="First Name" name="first_name" value={formData.first_name} onChange={handleInputChange} required/>
@@ -92,7 +94,7 @@ const PassengerRegister = () => {
 
           <div className="input-group flex column">
             <label className="primary-text">*</label>
-            <button className="primary-bg white-text reg-button" onClick={handleSubmit}>
+            <button className="primary-bg white-text reg-button" type="submit">
               Register
             </button>
           </div>
