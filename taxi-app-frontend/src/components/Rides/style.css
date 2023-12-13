@@ -1,0 +1,52 @@
+.rides-tabel {
+  height: 250px;
+  width: 50%;
+  margin-top: 50px;
+  border-radius: 0 0 34px 34px;
+  gap: 20px;
+}
+
+.ride-info {
+  font-size: 18px;
+}
+
+.riding-info {
+  justify-content: space-between;
+}
+
+.start-ride {
+  cursor: pointer;
+  padding: 14px;
+  border-radius: 35px;
+  text-align: center;
+  width: 50%;
+  place-self: center;
+}
+
+.start-ride > button {
+  background: none;
+}
+
+.message-box {
+  padding: 18px;
+  justify-content: space-between;
+  border-radius: 34px;
+  cursor: pointer;
+  width: 80%;
+}
+
+.send-msg {
+  text-align: center;
+  font-size: 18px;
+}
+
+.message-contain {
+  gap: 20px;
+  width: 50%;
+}
+
+.message {
+  background: none;
+  font-size: 16px;
+  font-family: "Zen Dots", sans-serif;
+}

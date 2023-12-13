@@ -2,12 +2,11 @@ import React from "react";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import MapComp from "../../components/Map/MapComp";
 import "./style.css";
-import Profile from "../../components/Profile/Profile";
 
 const DriverDashboard = () => {
   return (
     <div className="comp-container full-width full-height primary-bg">
-      <div className="flex row ">
+      <div className="flex row">
         <Dashboard />
         <div className="padding-10 full-width ">
           <div className="title-header white-text">
