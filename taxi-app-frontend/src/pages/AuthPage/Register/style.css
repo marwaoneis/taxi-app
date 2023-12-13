@@ -1,0 +1,72 @@
+/* Passenger Register */
+
+.passenger-register-page {
+  background-image: url("/src/assets/images/pass-register.jpg");
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  background-color: #232323ce;
+  width: 50%;
+  height: 75%;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.passenger-headings {
+  gap: 20px;
+}
+
+.logo {
+  width: 30%;
+}
+
+.register-form {
+  margin-top: 3rem;
+}
+
+.input-group {
+  margin: 10px;
+  gap: 10px;
+}
+input {
+  width: 18.75rem;
+  height: 50px;
+  border-radius: 5px;
+  padding: 7px 5px;
+}
+.reg-button {
+  width: 18.75rem;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #2d9596;
+}
+
+.driver-register-page {
+  background-size: cover;
+  background-position: center;
+  background-image: url("/src/assets/images/driver-register.jpeg");
+  background-repeat: no-repeat;
+}
+input[type="file"] {
+  display: none;
+}
+.upload {
+  width: 18.75rem;
+  height: 50px;
+  border-radius: 5px;
+  padding: 7px 5px;
+  cursor: pointer;
+}
+.upload label {
+  cursor: pointer;
+}
+.login-redirect {
+  margin-top: 1.25rem;
+  font-size: smaller;
+  text-decoration: underline;
+}
+.login-redirect span {
+  text-decoration: underline white;
+  cursor: pointer;
+}
