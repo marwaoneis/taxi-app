@@ -1,0 +1,38 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.page::-webkit-scrollbar {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.wrapper {
+  flex-wrap: wrap;
+}
