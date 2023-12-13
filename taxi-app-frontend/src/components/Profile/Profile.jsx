@@ -8,9 +8,10 @@ const Profile = () => {
     <div className="comp-container full-width full-height primary-bg">
       <div className="flex row">
         <Dashboard />
-        <div className="padding-10 full-width ">
-          <div className="title-header white-text">
-            <h1>My Profile</h1>
+
+        <div className="padding-10 profile-con flex center column full-width ">
+          <div className="title-header flex white-text">
+            <h1 className="mt-20">My Profile</h1>
           </div>
           <div className="flex profile-bg center column gray-bg">
             <div className="profile-pic flex center">
