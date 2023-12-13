@@ -11,15 +11,29 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('user_types', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('user_type');
+            $table->string('_rules')->nullable();
             $table->timestamps();
         });
+
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('phone_number')->nullable();
+            $table->unsignedBigInteger('user_type_id');
+            $table->string('profile_picture')->nullable();
+            $table->string('driving_license')->nullable();
+            $table->string('status')->nullable();
+            $table->foreign('user_type_id')->references('id')->on('user_types')->onDelete('cascade');
+            $table->timestamps();
+        });
+
+       
     }
 
     /**
