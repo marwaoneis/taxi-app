@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('phone_number');
             $table->unsignedBigInteger('user_type_id');
             $table->string('profile_picture')->nullable();
             $table->string('driving_license')->nullable();
