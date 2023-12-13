@@ -15,7 +15,7 @@ class UserFactory extends Factory
     /**
      * The current password being used by the factory.
      */
-    protected static string $password="123";
+    public static string $password="123";
 
     /**
      * Define the model's default state.
@@ -38,10 +38,10 @@ class UserFactory extends Factory
             'first_name' => fake()->firstName(),
             'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
-            // 'phone' => fake()->creditCardNumber(),
-            'user_type_id' => $type,
+            'phone_number' => fake()->creditCardNumber(),
+            'user_type_id' =>  $type,
             'status'=>$status,
-            'password' => $password ??= Hash::make('password'),
+            'password' =>  Hash::make('123'),
             'profile_picture'=>fake()->imageUrl($width=400, $height=400,$category="product") 
 
             // 'email_verified_at' => now(),
