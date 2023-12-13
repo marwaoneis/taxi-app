@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.navBar {
+  height: 66px;
+}
+
+.navBarElements {
+  place-content: flex-end;
+  padding-right: 70px;
+  align-self: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navElements {
+  gap: 28px;
+  margin-right: 40px;
+}
+
+.logo {
+  height: 70%;
+  width: 150px;
+  display: contents;
+  cursor: pointer;
+}
+
+.taxi-logo {
+  margin-left: 70px;
+}

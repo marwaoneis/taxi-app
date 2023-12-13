@@ -1,0 +1,27 @@
+.title-header {
+  position: absolute;
+  right: 54%;
+  top: 15%;
+  font-size: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+  text-align: center;
+}
+
+.title-header > h1 {
+  font-weight: 400;
+}
+
+th {
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid grey;
+  padding-right: 20px;
+}

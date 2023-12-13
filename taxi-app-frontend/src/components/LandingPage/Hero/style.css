@@ -1,0 +1,48 @@
+.hero {
+  height: 800px;
+  object-fit: cover;
+  background-image: url("/src/assets/images/hero.png");
+}
+
+.opacity-background {
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+}
+
+.box {
+  width: 565px;
+  height: 400px;
+  padding: 30px;
+  border-radius: 25px;
+  margin-left: 10%;
+  margin-bottom: 10%;
+}
+
+.hero-box-text {
+  width: 80%;
+}
+
+.hero-box-text > h1 {
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+}
+
+.hero-box {
+  padding-top: 5px;
+  gap: 20px;
+}
+
+.border {
+  border: 0.5px solid #d7d1d1;
+  width: 50%;
+  align-self: center;
+  margin-top: 20px;
+}
+
+p {
+  letter-spacing: 0.2px;
+  font-size: 18px;
+}
