@@ -5,10 +5,11 @@ import b2 from "../../../assets/images/border-2.svg";
 import service1 from "../../../assets/images/service-1.jpg";
 import service2 from "../../../assets/images/service-2.jpg";
 import service3 from "../../../assets/images/service-3.jpg";
+import "../index.css";
 
 const OurServices = () => {
   return (
-    <div className="service-bg full-width">
+    <div className="body service-bg full-width">
       <div className="service-title flex center">
         <div className="flex">
           <img src={b1} alt="border-left" className="border-left" />
