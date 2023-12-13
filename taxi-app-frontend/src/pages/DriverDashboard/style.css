@@ -3,20 +3,16 @@
 }
 
 .map-component {
-  /* position: absolute;
-  top: 15%;
-  right: 6%; */
+  border-radius: 34px 34px 0 0;
 }
 
 .title-header {
-  /* position: absolute; */
   right: 54%;
   top: 6%;
   font-size: 20px;
 }
 
 .title-text {
-  /* position: absolute; */
   top: 67%;
   left: 25%;
 }
@@ -47,4 +43,3 @@ td {
   border: 1px solid grey;
   padding-right: 20px;
 }
-
