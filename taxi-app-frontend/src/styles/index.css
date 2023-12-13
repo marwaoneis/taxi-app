@@ -7,13 +7,13 @@
   box-sizing: border-box;
 }
 
-body {
+.body {
   margin: 0;
   font-family: "Zen Dots", sans-serif;
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }
 
-body::-webkit-scrollbar {
+.body::-webkit-scrollbar {
   display: none;
 }
