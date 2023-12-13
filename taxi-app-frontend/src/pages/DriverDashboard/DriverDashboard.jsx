@@ -5,17 +5,19 @@ import "./style.css";
 
 const DriverDashboard = () => {
   return (
-    <div>
+    <div className="comp-container full-width full-height">
       <div className="title-header white-text">
         <h1>My Dashboard</h1>
       </div>
       <Dashboard />
-      <MapComp />
+      <div className="map-component">
+        <MapComp />
+      </div>
       <div className="title-text white-text">
         <h2>Ride Requests</h2>
       </div>
       <div className="rides-tabel flex center">
-        <table>
+        <table className="white-bg">
           <thead>
             <tr>
               <th>ID</th>
