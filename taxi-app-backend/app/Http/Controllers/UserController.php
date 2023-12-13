@@ -20,11 +20,11 @@ class UserController extends Controller
         }
         try{
             if ($user->user_type_id == 1) {
-                $drivers = User::where('user_type_id', 3)->where('status', 'accepted')->get();
+                $drivers = User::where('user_type_id', 3)->where('status', '=','accepted')->get();
             }
             return response()->json(['accepted_drivers_info'=>$drivers]);
         }catch(\Exception $e){
-            response()->json(['error'->$e]);
+            response()->json(['error'=>$e]);
         }
         
     }
