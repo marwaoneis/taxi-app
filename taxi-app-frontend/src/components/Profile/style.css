@@ -1,0 +1,24 @@
+.profile-container {
+  border-radius: 34px;
+}
+
+.title-header {
+  font-size: 20px;
+}
+
+.profile-pic {
+  width: 50%;
+  height: 50%;
+}
+
+.user-name,
+.email,
+.phone-number,
+.date {
+  font-size: 28px;
+}
+
+.user-info {
+  padding: 60px;
+  gap: 65px;
+}

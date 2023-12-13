@@ -2,14 +2,16 @@ import React from "react";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import MapComp from "../../components/Map/MapComp";
 import "./style.css";
+import Profile from "../../components/Profile/Profile";
 
 const DriverDashboard = () => {
   return (
     <div className="comp-container full-width full-height">
-      <div className="title-header white-text">
+      <Dashboard />
+      <Profile />
+      {/* <div className="title-header white-text">
         <h1>My Dashboard</h1>
       </div>
-      <Dashboard />
       <div className="map-component">
         <MapComp />
       </div>
@@ -68,7 +70,7 @@ const DriverDashboard = () => {
             </tr>
           </tbody>
         </table>
-      </div>
+      </div> */}
     </div>
   );
 };
