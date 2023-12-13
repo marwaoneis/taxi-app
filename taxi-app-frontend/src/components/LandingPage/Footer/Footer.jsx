@@ -1,9 +1,10 @@
 import React from "react";
 import "./style.css";
+import "../index.css";
 
 const Footer = () => {
   return (
-    <div className="footer-container primary-bg center flex column">
+    <div className="body footer-container primary-bg center flex column">
       <div className="flex column top">
         <p>
           <a className="footer-link" href="/">

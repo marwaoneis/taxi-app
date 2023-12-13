@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="full-width hero">
+    <div className="body full-width hero">
       <div className="full-width full-height opacity-background">
         <div className="box column flex white-bg">
           <div className="border"></div>
