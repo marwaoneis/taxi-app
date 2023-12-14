@@ -25,6 +25,8 @@ function App() {
           <Route path="/driverDashboard" element={<DriverDashboard />} />
           <Route path="/passengerDashboard" element={<PassengerDashboard />} />
           <Route path="/passengerDashboard/rides" element={<Rides />} />
+          <Route path="/driverDashboard/rides" element={<Rides />} />
+
           <Route path="/passengerDashboard/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
