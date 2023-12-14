@@ -1,0 +1,31 @@
+.profile-header {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-bottom: 55px;
+  margin-top: 55px;
+}
+
+.profile-pic {
+  margin-top: 50px;
+  width: 50%;
+  height: 50%;
+}
+
+.profile-bg {
+  width: 85%;
+  border-radius: 50px;
+  align-self: center;
+}
+
+.user-name,
+.email,
+.phone-number,
+.date {
+  font-size: 28px;
+}
+
+.user-info {
+  width: 60%;
+  padding: 60px;
+  gap: 65px;
+}

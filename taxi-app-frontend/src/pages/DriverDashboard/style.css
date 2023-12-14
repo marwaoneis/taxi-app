@@ -3,31 +3,28 @@
 }
 
 .map-component {
-  position: absolute;
-  top: 15%;
-  right: 6%;
+  border-radius: 34px 34px 0 0;
 }
 
 .title-header {
-  position: absolute;
   right: 54%;
   top: 6%;
   font-size: 20px;
 }
 
 .title-text {
-  position: absolute;
   top: 67%;
   left: 25%;
 }
 
 .rides-tabel {
-  position: absolute;
+  /* position: absolute; */
   bottom: 2.5%;
   left: 26%;
 }
 
 table {
+  width: 100%;
   border-collapse: collapse;
   text-align: center;
 }

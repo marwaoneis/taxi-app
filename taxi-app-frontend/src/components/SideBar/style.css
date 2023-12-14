@@ -37,3 +37,25 @@
   gap: 20px;
   width: 100%;
 }
+
+/* .sidebar-btn button:hover {
+  background-color: #2d9596;
+} */
+
+.sidebar-btn button {
+  transition: all 0.3s ease-in-out;
+}
+.sidebar-btn button:hover {
+  background-color: #2d9596;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+.active {
+  background-color: #2d9596;
+  color: white;
+}
+.logout-btn,
+.sidebar-btn .logout-btn:hover {
+  background-color: #ff8484;
+  color: white;
+}
