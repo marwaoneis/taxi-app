@@ -40,3 +40,16 @@
 .wrapper {
   flex-wrap: wrap;
 }
+.space-between {
+  justify-content: space-between;
+}
+.gap {
+  gap: 10px;
+}
+.padding-10 {
+  padding-inline: 20px;
+  padding-block: 10px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
