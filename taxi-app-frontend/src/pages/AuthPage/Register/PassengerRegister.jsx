@@ -38,7 +38,7 @@ const PassengerRegister = () => {
       method: "POST",
     });
     
-    if (response.status=="success" ) {
+    if (response.status==="success" ) {
       localStorage.setItem("logged-in",JSON.stringify(response.authorisation))
      
       navigate("/passengerDashboard");
