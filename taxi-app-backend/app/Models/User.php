@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
+
 class User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
@@ -24,6 +25,10 @@ class User extends Authenticatable implements JWTSubject
         'email',
 
         'password',
+        'phone_number',
+        'profile_picture',
+        'driving_license',
+        'status'
     ];
     public function passenger()
     {
@@ -74,6 +79,7 @@ class User extends Authenticatable implements JWTSubject
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
             'email' => $this->email,
+           
             'user_type_id' => $this->usertype_id,
             'id' => $this->id
         ];

@@ -25,17 +25,19 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
         $credentials = $request->only('email', 'password');
-
-        $token = Auth::attempt($credentials);
-        if (!$token) {
+        $checkStatus=User::where('email','=',$request->email)->first();
+       
+        if( $checkStatus->status=="accepted" ){
+            $token = Auth::attempt($credentials);
+            if (!$token) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Unauthorized',
+                ], 401);
+            }
+    
+            $user = Auth::user();
             return response()->json([
-                'status' => 'error',
-                'message' => 'Unauthorized',
-            ], 401);
-        }
-
-        $user = Auth::user();
-        return response()->json([
                 'status' => 'success',
                 'user' => $user,
                 'authorisation' => [
@@ -43,6 +45,17 @@ class AuthController extends Controller
                     'type' => 'bearer',
                 ]
             ]);
+        }else{
+            return response()->json([
+                'status' => false,
+               
+                'message' =>'Account pending approval!'
+                
+            ]);
+
+        }
+       
+      
 
     }
 
@@ -77,7 +90,7 @@ class AuthController extends Controller
                 'profile_picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'first_name' => 'required|string|max:255',
                 'last_name' => 'required|string|max:255',
-              
+                
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:6',
               
@@ -87,12 +100,12 @@ class AuthController extends Controller
             $user = User::create([
            
            
-           
+                'status'=>'accepted',
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
                 'email' => $request->email,
                 'user_type_id'=>$request->user_type_id,
-                'profile_picture'=>'http://127.0.0.1:8000/storage/images/'.$request->file('profile_picture')->store('images', 'public'),
+                // 'profile_picture'=>'http://127.0.0.1:8000/storage/images/'.$request->file('profile_picture')->store('images', 'public'),
 
                 'password' => Hash::make($request->password),
             ]);
@@ -101,14 +114,16 @@ class AuthController extends Controller
         // 3 is driver
         else if($request->user_type_id==3){
             $request->validate([
+                'status'=>'pending',
+
                 'first_name' => 'required|string|max:255',
                 'last_name' => 'required|string|max:255',
                
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:6',
-                'profile_picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                // 'profile_picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
-                'license'=>'required'
+                // 'license'=>'required'
             ]);
             $user = User::create([
            
@@ -120,7 +135,7 @@ class AuthController extends Controller
                 'user_type_id'=>$request->user_type_id,
                 'profile_picture'=>$request->profile_picture,
                 'license'=>$request->license,
-                'profile_picture'=>'http://127.0.0.1:8000/storage/images/'.$request->file('profile_picture')->store('images', 'public').'',
+                // 'profile_picture'=>$request->file('profile_picture')->store('images', 'public'),
                 'password' => Hash::make($request->password),
             ]);
     

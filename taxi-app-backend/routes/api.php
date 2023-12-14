@@ -5,6 +5,8 @@ use App\Http\Controllers\RideController;
 use App\Models\Ride;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,10 @@ Route::controller(AuthController::class)->group(
 );
 
 
+
+
+
+
 Route::get('/pending_rides', [RideController::class, 'pending_rides']);
 Route::post('/accept_ride', [RideController::class, 'accept_ride']);
 
@@ -51,4 +57,18 @@ Route::get('/get_completed_rides_total', [RideController::class, 'get_completed_
 Route::get('/get_todays_rides_total', [RideController::class, 'get_todays_rides_total']);
 Route::get('/get_average_drivers', [RideController::class, 'get_average_drivers']);
 
+Route::get('get-drivers',[UserController::class,'getAcceptedDrivers']);
+Route::get('get-driver-status',[UserController::class,'getDriverStatus']);
+Route::get('get-pending-drivers',[UserController::class,'getPendingDrivers']);
+Route::get('get-pending-drivers-count',[UserController::class,'getPendingDriversCount']);
+Route::post('accept-pending-driver',[UserController::class,'acceptPendingDriver']);
+Route::post('reject-pending-driver',[UserController::class,'rejectPendingDriver']);
+Route::post('remove-accepted-driver',[UserController::class,'removeAcceptedDriver']);
+Route::get('get-all-passengers',[UserController::class,'getAllPassengers']);
+Route::post('update-passenger-picture',[UserController::class,'updatePassengerPicture']);
+Route::post('update-driver-picture',[UserController::class,'updateDriverPicture']);
+Route::get('get-user-info',[UserController::class,'getUserInfo']);
+Route::post('send-message',[MessageController::class,'sendMessageToAnotherUser']);
+Route::get('get-messages-between-two-users',[MessageController::class,'getMessagesBetweenTwoUsers']);//admin panel should use this || and conversation between two users should use this
+Route::post('get-messages-between-user-and-admin',[MessageController::class,'getMessagesBetweenUserAndAdmin']);//any user contacting admin should use this
 

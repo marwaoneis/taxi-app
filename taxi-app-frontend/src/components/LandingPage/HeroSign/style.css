@@ -1,0 +1,20 @@
+.signup {
+  height: 213px;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.driver-register,
+.passenger-register {
+  text-decoration: none;
+  font-size: 30px;
+  height: 75px;
+  width: 520px;
+  justify-content: space-between;
+  border-bottom: 3px solid black;
+}
+
+.arrow-right {
+  height: 30%;
+}

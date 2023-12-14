@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from "./pages/AuthPage/Login/Login";
+import DriverRegister from "./pages/AuthPage/Register/DriverRegister";
+import PassengerRegister from "./pages/AuthPage/Register/PassengerRegister";
+import Landing from "./pages/LandingPage/LandingPage";
+import DriverDashboard from "./pages/DriverDashboard/DriverDashboard";
+import PassengerDashboard from "./pages/PassengerDashboard/PassengerDashboard";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import "./styles/index.css";
+import "./styles/base.css";
+import "./styles/color.css";
+import Rides from "./components/Rides/Rides";
+import Profile from "./components/Profile/Profile";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App flex column">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/driverRegister" element={<DriverRegister />} />
+          <Route path="/passengerRegister" element={<PassengerRegister />} />
+          <Route path="/driverDashboard" element={<DriverDashboard />} />
+          <Route path="/passengerDashboard" element={<PassengerDashboard />} />
+          <Route path="/passengerDashboard/rides" element={<Rides />} />
+          <Route path="/passengerDashboard/profile" element={<Profile />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
