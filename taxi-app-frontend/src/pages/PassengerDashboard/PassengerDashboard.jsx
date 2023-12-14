@@ -19,17 +19,18 @@ const PassengerDashboard = () => {
               currentLocation={[41.505, -1.09]}
             />
           </div>
-          <div className="dashboard">
-            <div className="current-location">
-              <img src="" alt="current location" className="current" />
-              <div>Current Location</div>
+          <div className="flex large-gape center column full-width mt-40">
+            <div className="dashboard full-width flex">
+              <div className="flex center current-location">
+                <div className="white-text">Current Location</div>
+              </div>
+              <div className="flex center choose-dest">
+                <div className="white-text">Choose Destination</div>
+              </div>
             </div>
-            <div className="choose-dest">
-              <div>Choose Destination</div>
+            <div className="req-ride black-bg">
+              <div className="white-text">Request a ride</div>
             </div>
-          </div>
-          <div className="req-ride">
-            <div>Request a ride</div>
           </div>
         </div>
       </div>

@@ -49,6 +49,10 @@
   gap: 10px;
 }
 
+.large-gape {
+  gap: 150px;
+}
+
 .padding-10 {
   padding-inline: 20px;
   padding-block: 10px;
@@ -56,6 +60,10 @@
 
 .mt-20 {
   margin-top: 20px;
+}
+
+.mt-40 {
+  margin-top: 40px;
 }
 
 .ml-20 {

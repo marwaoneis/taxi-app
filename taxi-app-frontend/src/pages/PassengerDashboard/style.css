@@ -1,0 +1,32 @@
+.dashboard {
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.current-location,
+.choose-dest {
+  padding: 20px;
+  width: 40%;
+  border: 1px solid white;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.current-location:hover,
+.choose-dest:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.choose-dest {
+  width: 40%;
+}
+
+.req-ride {
+  text-align: center;
+  cursor: pointer;
+  padding: 25px;
+  border-radius: 50px;
+  width: 280px;
+  font-size: 18px;
+}
