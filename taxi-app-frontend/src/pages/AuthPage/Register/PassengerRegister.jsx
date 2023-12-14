@@ -3,9 +3,11 @@ import "./style.css";
 import logo from "../../../assets/images/logo.svg";
 import { useState } from "react";
 import { request } from "../../../core/request_helpers/apicall";
+import { useNavigate } from "react-router-dom";
 
 
 const PassengerRegister = () => {
+  const navigate=useNavigate()
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -36,9 +38,10 @@ const PassengerRegister = () => {
       method: "POST",
     });
     
-    if (response.data.status === "true") {
-      console.log(response.data);
-      // navigate("/auth/login");
+    if (response.status=="success" ) {
+      localStorage.setItem("logged-in",JSON.stringify(response.authorisation))
+     
+      navigate("/passengerDashboard");
     } else {
       setFormData({
         first_name: '',
@@ -51,7 +54,7 @@ const PassengerRegister = () => {
     }
     }catch (error) {
       // Log or handle the error as needed
-      console.error('Registration failed:', error.message);
+      console.log('Registration failed:', error.message);
     }
     
   };
