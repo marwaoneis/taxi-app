@@ -70,6 +70,27 @@ class UserController extends Controller
         
     }
 
+    public function getDriverStatus(){
+        $user = Auth::user();
+        try{
+            $user->user_id !=null;
+        }catch(\Exception $e){
+            return response()->json([
+                'message'=>'unauthorized'
+            ]);
+        }
+        try {
+            $driver = User::where('id',$user->id)->first();
+            return response()->json([
+                'status'=>'success',
+                'driver_status'=>$driver->status
+            ]); 
+        }
+        catch(\Exception $e){
+            response()->json(['error'->$e]);
+        }
+    }
+
     public function acceptPendingDriver(Request $req){
         $user = Auth::user();
         try{
