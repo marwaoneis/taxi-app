@@ -4,6 +4,7 @@ import logo from "../../../assets/images/logo.svg";
 import { useState } from "react";
 import { request } from "../../../core/request_helpers/apicall";
 import { useNavigate } from "react-router-dom";
+import Ratings from "../../../components/Ratings/Ratings";
 
 
 const PassengerRegister = () => {
@@ -108,6 +109,8 @@ const PassengerRegister = () => {
           </p>
         </div>
       </div>
+      
+<Ratings />
     </div>
   );
 };

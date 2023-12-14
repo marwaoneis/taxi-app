@@ -3,6 +3,8 @@ import "./style.css";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import MapComp from "../../components/Map/MapComp";
 import "./style.css";
+import Profile from "../../components/Profile/Profile";
+import Ratings from "../../components/Ratings/Ratings";
 
 const PassengerDashboard = () => {
   return (
@@ -33,6 +35,7 @@ const PassengerDashboard = () => {
           </div>
         </div>
       </div>
+      <Ratings />
     </div>
   );
 };

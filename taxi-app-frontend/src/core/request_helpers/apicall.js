@@ -5,10 +5,10 @@ axios.defaults.baseURL = "http://127.0.0.1:8000/api";
 export const request = async ({ route, method, body,isLogin=false }) => {
   try{
      const response = await axios.request({
-    // headers: {
-    //     'Content-Type': 'application/x-www-form-urlencoded',
-    //     'Authorization': isLogin?'':JSON.parse(localStorage.getItem("logged_in")).token
-    // },
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': isLogin?'':`Bearer ${JSON.parse(localStorage.getItem("logged-in")).token}`
+    },
     url: route,
     method: method,
     data: body,
