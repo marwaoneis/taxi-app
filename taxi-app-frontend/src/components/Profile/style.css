@@ -1,14 +1,20 @@
-.profile-header {
-  font-size: 20px;
-  margin-left: 20px;
-  margin-bottom: 55px;
-  margin-top: 55px;
-}
-
 .profile-pic {
   margin-top: 50px;
   width: 50%;
   height: 50%;
+}
+
+.profile-con {
+  place-content: space-around;
+}
+
+.comp-container {
+  position: relative;
+}
+
+.title-header {
+  align-self: flex-start;
+  font-size: 20px;
 }
 
 .profile-bg {
