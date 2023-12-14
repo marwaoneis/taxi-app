@@ -40,8 +40,10 @@ const DriverRegister = () => {
             </div>
 
             <div className="input-group upload flex column white-bg">
-              <label className="primary-text">Upload Driver License*</label>
-              <input type="file" placeholder="file" />
+              <label className="primary-text">
+                Upload Driver Liscence*
+                <input className="pp-input" type="file" />
+              </label>
             </div>
 
             <div className="input-group flex column">

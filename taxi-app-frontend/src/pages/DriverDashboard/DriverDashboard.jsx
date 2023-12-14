@@ -1,6 +1,7 @@
 import React from "react";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import MapComp from "../../components/Map/MapComp";
+
 import "./style.css";
 import Profile from "../../components/Profile/Profile";
 

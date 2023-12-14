@@ -29,3 +29,9 @@
   padding: 60px;
   gap: 65px;
 }
+/* input[type="file"] {
+  display: none;
+} */
+.upload-profile{
+  cursor: pointer;
+}

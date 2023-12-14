@@ -8,9 +8,16 @@ const Profile = () => {
       <div className="profile-header white-text">
         <h1>My Profile</h1>
       </div>
+
       <div className="flex profile-bg center column gray-bg ">
         <div className="profile-pic flex center">
-          <img src={profile} alt="profile pic" />
+          <div className="">
+            <label className="upload-profile">
+              <img src={profile} alt="profile pic" />
+              <input className="pp-input" type="file" />
+            </label>
+            </div>
+          </div>
         </div>
         <div className="rating"></div>
 
@@ -21,7 +28,7 @@ const Profile = () => {
           <div className="date black-text">Date Joined: </div>
         </div>
       </div>
-    </div>
+   
   );
 };
 
