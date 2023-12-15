@@ -117,7 +117,7 @@ const Login = () => {
             <label className="input-lable primary-text">Passwrod</label>
             <input
               className="login-input"
-              type="pasword"
+              type="password"
               placeholder="password"
               name="password"
               value={formData.password}

@@ -50,6 +50,8 @@ Route::post('/end_ride', [RideController::class, 'end_ride']);
 
 Route::post('/request_ride', [RideController::class, 'request_ride']);
 Route::get('/get_ride/{id?}', [RideController::class, 'get_ride']);
+Route::get('/get_rides', [RideController::class, 'get_rides']);
+
 Route::get('/get_total_money', [RideController::class, 'get_total_money']);
 Route::get('/get_active_rides_total', [RideController::class, 'get_active_rides_total']);
 Route::get('/get_avg_drivers', [RideController::class, 'get_avg_drivers']);

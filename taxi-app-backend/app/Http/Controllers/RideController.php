@@ -230,7 +230,47 @@ class RideController extends Controller
             ], 200);
         }
     }
+    public function get_rides(Request $req)
+    {
+        $user = Auth::user();
+        // if ($user->user_type_id == 3) {
 
+
+
+            // dd($user);
+
+
+            $getrides =   DB::table('rides')
+                ->join('users as p', 'rides.passenger_id', '=', 'p.id')
+                ->join('users as d', 'rides.driver_id', '=', 'd.id')
+               
+
+                ->select(
+                    'p.first_name as p_first_name',
+                    'p.last_name as p_last_name',
+                    'rides.id',
+                    'rides.driver_id',
+                    // json_decode( 'rides.destination'),
+                    'rides.price',
+                    // json_decode('rides.start_location'),
+                    'rides.status'
+                )->get();
+            // $getride->start_location = json_decode($getride->start_location);
+            // $getride->destination = json_decode($getride->destination);
+            return
+                response()->json([
+                    "Success" => true,
+                    // "message" => "Ride Requested",
+                    "ride" =>  $getrides
+
+                ], 200);
+        // } else {
+        //     return response()->json([
+        //         "success" => false,
+        //         "message" => "Not Authorized",
+        //     ], 200);
+        // }
+    }
 
     public function get_total_money()
     {

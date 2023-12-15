@@ -22,7 +22,7 @@ const Rides = () => {
           </div>
           <div className="riding-info center flex">
             <div className="rides-tabel white-bg flex column full-width mt-20">
-              <div className="mt-20 ml-20 ride-info">Pessenger Name:</div>
+              <div className="mt-20 ml-20 ride-info">Passenger Name:</div>
               <div className="ml-20 ride-info">Start Point:</div>
               <div className="ml-20 ride-info">Destination:</div>
               <div className="ml-20 ride-info">Estimated drive time:</div>
