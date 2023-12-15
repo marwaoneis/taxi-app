@@ -22,11 +22,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/driverRegister" element={<DriverRegister />} />
           <Route path="/passengerRegister" element={<PassengerRegister />} />
-          <Route path="/driverDashboard/home" element={<DriverDashboard />} />
           <Route
             path="/passengerDashboard/home"
             element={<PassengerDashboard />}
           />
+          <Route path="/driverDashboard/home" element={<DriverDashboard />} />
+          <Route path="/driverDashboard" element={<DriverDashboard />} />
+          <Route path="/passengerDashboard/" element={<PassengerDashboard />} />
           <Route path="/passengerDashboard/rides" element={<Rides />} />
           <Route path="/driverDashboard/rides" element={<Rides />} />
 
