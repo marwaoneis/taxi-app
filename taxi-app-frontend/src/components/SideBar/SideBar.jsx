@@ -5,7 +5,7 @@ import "./style.css";
 
 const SideBar = () => {
   const location = useLocation();
-  console.log(location)
+  console.log(location);
   const [activeMainTab, setActiveMainTab] = useState(location.pathname);
   const menuItems = [
     {
