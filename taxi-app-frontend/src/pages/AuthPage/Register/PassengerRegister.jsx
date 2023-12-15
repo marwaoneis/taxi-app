@@ -110,7 +110,7 @@ const PassengerRegister = () => {
         </div>
       </div>
       
-<Ratings />
+
     </div>
   );
 };
