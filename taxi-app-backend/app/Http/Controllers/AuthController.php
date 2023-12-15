@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule as ValidationRule;
 
 class AuthController extends Controller
@@ -23,33 +25,37 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
         $credentials = $request->only('email', 'password');
-
-        $token = Auth::attempt($credentials);
-        if (!$token) {
+        $checkStatus=User::where('email','=',$request->email)->first();
+       
+        if( $checkStatus->status=="accepted" ){
+            $token = Auth::attempt($credentials);
+            if (!$token) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Unauthorized',
+                ], 401);
+            }
+    
+            $user = Auth::user();
             return response()->json([
-                'status' => 'error',
-                'message' => 'Unauthorized',
-            ], 401);
-        }
-
-        $user = Auth::user();
-        $response = [
-            'id'=>$user->id,
-            'first_name'=>$user->first_name,
-            'last_name'=>$user->last_name,
-            'email'=>$user->email,
-            'user_type_id'=>$user->user_type_id,
-            'phone_number'=>$user->phone_number,
-            'profile_picture'=>$user->profile_picture
-        ];
-        return response()->json([
                 'status' => 'success',
-                'user' => $response,
+                'user' => $user,
                 'authorisation' => [
                     'token' => $token,
                     'type' => 'bearer',
                 ]
             ]);
+        }else{
+            return response()->json([
+                'status' => false,
+               
+                'message' =>'Account pending approval!'
+                
+            ]);
+
+        }
+       
+      
 
     }
 
@@ -59,36 +65,48 @@ class AuthController extends Controller
             'user_type_id'=> [
                 'required',
                 ValidationRule::in([2, 3]),
+                // 
             ],
           
         ]);
-        // if($request->user_type_id==1){
-        //     $user = User::create([
-        //         'first_name' => $request->first_name,
-        //         'last_name' => $request->last_name,
-        //         'email' => $request->email,
-        //         'user_type_id'=>$request->user_type_id,
-        //         'phone_number'=>$request->phone_number,
-        //         'password' => Hash::make($request->password),
-        //     ]);
+        $path = storage_path('images/');
 
+        // dd($path);
+        // !is_dir($path) &&
+        //     mkdir($path, 0777, true);
+
+        // if($file = $request->file('profile_picture')) {
+        //     $fileData = $this->uploads($file,$path);
+        //     // Image::create([
+        //     //     'name' => $fileData['fileName'],
+        //     //     'type' => $fileData['fileType'],
+        //     //     'path' => $fileData['filePath'],
+        //     //     'size' => $fileData['fileSize']
+        //     // ]);
         // }
         // 2 is passenger
         if($request->user_type_id==2){
             $request->validate([
+                'profile_picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'first_name' => 'required|string|max:255',
                 'last_name' => 'required|string|max:255',
-                'phone_number'=>'required|string',
+                
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:6',
               
             ]);
+            // dd($request->file('profile_picture')->store('images', 'public'));
+            
             $user = User::create([
+           
+           
+                'status'=>'accepted',
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
                 'email' => $request->email,
                 'user_type_id'=>$request->user_type_id,
-                'phone_number'=>$request->phone_number,
+                // 'profile_picture'=>'http://127.0.0.1:8000/storage/images/'.$request->file('profile_picture')->store('images', 'public'),
+
                 'password' => Hash::make($request->password),
             ]);
 
@@ -96,47 +114,63 @@ class AuthController extends Controller
         // 3 is driver
         else if($request->user_type_id==3){
             $request->validate([
+                'status'=>'pending',
+
                 'first_name' => 'required|string|max:255',
                 'last_name' => 'required|string|max:255',
+               
                 'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:6',
-                'phone_number'=>'required|string',
-                'profile_picture'=>'required',
-                'driving_license'=>'required'
+                // 'profile_picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+                // 'license'=>'required'
             ]);
             $user = User::create([
+           
+           
+           
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
                 'email' => $request->email,
-                'phone_number'=>$request->phone_number,
                 'user_type_id'=>$request->user_type_id,
                 'profile_picture'=>$request->profile_picture,
-                'driving_license'=>$request->driving_license,
+                'license'=>$request->license,
+                // 'profile_picture'=>$request->file('profile_picture')->store('images', 'public'),
                 'password' => Hash::make($request->password),
-                'status' => 'pending'
             ]);
+    
         }
+       
+
+     
         $token = Auth::login($user);
-        $response = [
-            'id'=>$user->id,
-            'first_name'=>$user->first_name,
-            'last_name'=>$user->last_name,
-            'email'=>$user->email,
-            'phone_number'=>$user->phone_number,
-            'profile_picture'=>$user->profile_picture,
-            'user_type_id'=>$user->user_type_id
-        ];
         return response()->json([
             'status' => 'success',
             'message' => 'User created successfully',
-            'user' => $response,
+            'user' => $user,
             'authorisation' => [
                 'token' => $token,
                 'type' => 'bearer',
             ]
         ]);
     }
+    public function uploads($file, $path)
+    {
+        if($file) {
+            $fileName   = time() . $file->getClientOriginalName();
+            Storage::disk('storage')->put($path . $fileName, File::get($file));
+            $file_name  = $file->getClientOriginalName();
+            $file_type  = $file->getClientOriginalExtension();
+            $filePath   = $path . $fileName;
 
+            return $file = [
+                'fileName' => $file_name,
+                'fileType' => $file_type,
+                'filePath' => $filePath,
+                'fileSize' => $this->fileSize($file)
+            ];
+        }
+    }
     public function logout()
     {
         Auth::logout();

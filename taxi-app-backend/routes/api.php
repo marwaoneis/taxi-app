@@ -58,6 +58,7 @@ Route::get('/get_todays_rides_total', [RideController::class, 'get_todays_rides_
 Route::get('/get_average_drivers', [RideController::class, 'get_average_drivers']);
 
 Route::get('get-drivers',[UserController::class,'getAcceptedDrivers']);
+Route::get('get-driver-status',[UserController::class,'getDriverStatus']);
 Route::get('get-pending-drivers',[UserController::class,'getPendingDrivers']);
 Route::get('get-pending-drivers-count',[UserController::class,'getPendingDriversCount']);
 Route::post('accept-pending-driver',[UserController::class,'acceptPendingDriver']);

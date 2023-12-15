@@ -15,6 +15,7 @@ return [
 
     'default' => env('FILESYSTEM_DISK', 'local'),
 
+
     /*
     |--------------------------------------------------------------------------
     | Filesystem Disks
@@ -55,8 +56,20 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
+        
+            // ...
+        
+            // 'storage' => [
+            //     'driver' => 'local',
+            //     'root' => storage_path('app/public'),
+            //     'url' => env('APP_URL').'/storage',
+            //     'visibility' => 'public',
+            // ],
+        
+            // ...
+        ],
 
-    ],
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -71,6 +84,20 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+    ],
+
+    'ftp' => [
+        'driver' => 'ftp',
+        'host' => env('FTP_HOST'),
+        'username' => env('FTP_USERNAME'),
+        'password' => env('FTP_PASSWORD'),
+     
+        // Optional FTP Settings...
+        // 'port' => env('FTP_PORT', 21),
+        // 'root' => env('FTP_ROOT'),
+        // 'passive' => true,
+        // 'ssl' => true,
+        // 'timeout' => 30,
     ],
 
 ];

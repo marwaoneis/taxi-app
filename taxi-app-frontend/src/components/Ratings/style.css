@@ -1,0 +1,23 @@
+.rating-container{
+    width: 77.55vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.737);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+}
+.smaller-container{
+    gap: 30px;
+    background-color: aliceblue;
+}
+.rating-comment-container{
+    gap: 10px;
+}
+.save-button{
+    width: 120px;
+}
+.later-btn{
+    width: 120px;
+}
