@@ -1,7 +1,5 @@
 <img src="./readme/title1.svg"/>
 
-<br><br>
-
 <!-- project philosophy -->
 <img src="./readme/title2.svg"/>
 
@@ -27,8 +25,6 @@ Administrator
 - As an administrator, I want to have a dashboard for managing user accounts, to maintain the integrity of the app.
 - As an administrator, I want to view ride statistics, to monitor the app's performance and user engagement.
 
-  <br><br>
-
 <!-- Tech stack -->
  <img src="./readme/title3.svg"/>
 
@@ -41,8 +37,6 @@ Administrator
 - **Database**: [Eloquent ORM](https://laravel.com/docs/5.0/eloquent) is Laravel's native ORM (Object-Relational Mapping) used for database interactions within SpeedyTrip. It simplifies data manipulation and retrieval by allowing expressive and fluent database queries, along with seamless relationships management.
 - **Language**: [JavaScript](https://www.javascript.com/) is the primary programming language for SpeedyTrip, powering both the React frontend and the Node.js within Electron's backend. JavaScript's versatility and widespread support make it an ideal choice for this full-stack development project.
 
-<br><br>
-
 <!-- UI UX -->
 <img src="./readme/title4.svg"/>
 
@@ -54,5 +48,3 @@ Administrator
 | ![Chats Page](https://github.com/marwaoneis/taxi-app/assets/110203332/207b3890-7b21-4c11-9413-3479889744f1) | ![Rides start Driver Dashboard](https://github.com/marwaoneis/taxi-app/assets/110203332/f2e470cc-e56d-43c0-9084-f2fe7241f311) | ![Passenger Rating Dashboard](https://github.com/marwaoneis/taxi-app/assets/110203332/0ccdc127-ddb4-4c25-857f-48babbe63706) |
 
 - Check more mockups on [Figma...](https://www.figma.com/file/zQNJHNBXiV2XQrbJUXJ317/UI%2FUX---Taxi-App?type=design&mode=design&t=CZjVzZw88ynDALH1-1)
-
-<br><br>
