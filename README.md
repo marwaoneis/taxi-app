@@ -51,8 +51,7 @@ Administrator
 
 | Chats Screen                         | Driver Rides Screen                   | Drive Rating Screen                          |
 | ----------------------------------- | -------------------------------- | ------------------------------------------------ |
-| ![Chats Page](https://github.com/marwaoneis/taxi-app/assets/110203332/207b3890-7b21-4c11-9413-3479889744f1) | ![Rides start Driver Dashboard](https://github.com/marwaoneis/taxi-app/assets/110203332/f2e470cc-e56d-43c0-9084-f2fe7241f311)
- | ![Passenger Rating Dashboard](https://github.com/marwaoneis/taxi-app/assets/110203332/0ccdc127-ddb4-4c25-857f-48babbe63706) |
+| ![Chats Page](https://github.com/marwaoneis/taxi-app/assets/110203332/207b3890-7b21-4c11-9413-3479889744f1) | ![Rides start Driver Dashboard](https://github.com/marwaoneis/taxi-app/assets/110203332/f2e470cc-e56d-43c0-9084-f2fe7241f311) | ![Passenger Rating Dashboard](https://github.com/marwaoneis/taxi-app/assets/110203332/0ccdc127-ddb4-4c25-857f-48babbe63706) |
 
 - Check more mockups on [Figma...](https://www.figma.com/file/zQNJHNBXiV2XQrbJUXJ317/UI%2FUX---Taxi-App?type=design&mode=design&t=CZjVzZw88ynDALH1-1)
 
